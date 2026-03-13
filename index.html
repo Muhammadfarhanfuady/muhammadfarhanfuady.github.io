@@ -111,7 +111,8 @@
     /* INFO CARD */
     .info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:32px;box-shadow:var(--shadow);animation:up .8s .18s ease both}
     .card-avatar{width:82px;height:82px;border-radius:50%;background:var(--bg2);border:2.5px solid var(--border2);overflow:hidden;margin-bottom:18px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:2rem;font-style:italic;color:var(--accent)}
-    .card-avatar img{width:100%;height:100%;object-fit:cover}
+    .card-avatar-header {margin-top: 18px; width:28; height:28; border-radius:50%; background:var(--bg2); border:2.5px solid var(--border2); overflow:hidden; margin-bottom:18px; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-size:2rem; font-style:italic; color:var(--accent) }
+    .card-avatar-header img { width:100%; height:100%; object-fit:cover; object-position:center top; }    .card-avatar img{width:100%;height:100%;object-fit:cover}
     .card-name{font-family:'Fraunces',serif;font-size:1.18rem;font-weight:500;letter-spacing:-.02em;margin-bottom:3px}
     .card-role{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted);margin-bottom:22px}
     .card-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
@@ -237,8 +238,9 @@
 <body>
 
 <nav id="nav">
-  <a href="#hero" class="nav-logo"><span class="nav-dot"></span>Muhammad Farhan Fuady</a>
-  <div class="nav-pills" id="nav-pills">
+<a href="#hero" class="nav-logo"><div class="card-avatar-header"><img src="data:image/jpeg;base64,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" alt="Muhammad Farhan Fuady" /></div>  
+Muhammad Farhan Fuady</a>
+<div class="nav-pills" id="nav-pills">
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
