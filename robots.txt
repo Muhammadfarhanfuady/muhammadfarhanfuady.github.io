@@ -1,0 +1,8 @@
+# robots.txt — Portofolio Website
+# Ganti username dengan GitHub username Anda
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://username.github.io/sitemap.xml
